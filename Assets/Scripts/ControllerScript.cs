@@ -51,11 +51,12 @@ public class ControllerScript : MonoBehaviour
             Touch touch = Input.GetTouch(0);
             if(touch.phase == TouchPhase.Began)
             {
+                DataScript.inputLock = true;
                 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
 
                 RaycastHit2D raycastHit2D = Physics2D.Raycast(touchPos, Vector2.zero);
 
-                if (raycastHit2D.collider != null && raycastHit2D.collider.gameObject.tag == "Point" && !DataScript.isSelectionLocked && !raycastHit2D.collider.gameObject.GetComponent<PointScript>().isColorized)
+                if (raycastHit2D.collider != null && raycastHit2D.collider.gameObject.tag == "Point" && !raycastHit2D.collider.gameObject.GetComponent<PointScript>().isColorized)
                 {
                     raycastHit2D.collider.gameObject.GetComponent<SpriteRenderer>().color = DataScript.playerColor;
                     for (int j = 0; j < 2; j++)
@@ -66,9 +67,9 @@ public class ControllerScript : MonoBehaviour
 
                     DataScript.pointCountSelectedbyPlayer++;
 
-                    if (DataScript.pointCountSelectedbyPlayer == DataScript.pointCountToSelect)
+                    if (DataScript.pointCountSelectedbyPlayer <= DataScript.pointCountToSelect)
                     {
-                        DataScript.isSelectionLocked = true;
+                        //DataScript.isSelectionLocked = true;
                         SelectRandomPoints();
                     }
                 }
