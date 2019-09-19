@@ -18,7 +18,7 @@ public class GameInitializer : MonoBehaviour
         DataScript.inputLock = false;
         DataScript.playerColor = Color.blue;
         DataScript.computerColor = Color.red;
-        DataScript.defaultColor = Color.black;
+        DataScript.defaultColor = new Color(0.3207547f, 0.3207547f, 0.3207547f);
         DataScript.pointList = new List<GameObject>();
     }
 }

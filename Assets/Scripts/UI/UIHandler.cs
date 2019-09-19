@@ -15,6 +15,7 @@ public class UIHandler : MonoBehaviour
     public Button exitButton;
 
     public Button levelPanelOpenerButton;
+    public Image guideImage;
     
     void Start()
     {
@@ -52,9 +53,11 @@ public class UIHandler : MonoBehaviour
             settingsPanel.SetActive(false);
             settingsButton.gameObject.SetActive(true);
             exitButton.gameObject.SetActive(false);
+            guideImage.gameObject.SetActive(true);
         }
         else
         {
+            guideImage.gameObject.SetActive(false);
             settingsPanel.SetActive(true);
             settingsButton.gameObject.SetActive(false);
             exitButton.gameObject.SetActive(true);
@@ -77,8 +80,8 @@ public class UIHandler : MonoBehaviour
             levelsPanel.SetActive(false);
             levelPanelOpenerButton.gameObject.SetActive(true);
         }
-            
 
+        guideImage.gameObject.SetActive(true);
         exitButton.gameObject.SetActive(false);
         settingsButton.gameObject.SetActive(true);
         DataScript.inputLock = false;

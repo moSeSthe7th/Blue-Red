@@ -9,6 +9,8 @@ public class PointScript : MonoBehaviour
     public string pointColor2;
     public string combinedPointColor;
 
+    public Sprite mixedColorSprite;
+
     private string defaultColorStr = "Default Color";
     private string playerColorStr = "Player Color";
     private string computerColorStr = "Computer Color";
@@ -70,17 +72,20 @@ public class PointScript : MonoBehaviour
             if (pointColor1 == playerColorStr && pointColor2 == playerColorStr)
             {
                 combinedPointColor = playerColorStr;
+                GetComponent<SpriteRenderer>().color = DataScript.playerColor;
                 
             }
             else if (pointColor1 == computerColorStr && pointColor2 == computerColorStr)
             {
                 combinedPointColor = computerColorStr;
-               
+                GetComponent<SpriteRenderer>().color = DataScript.computerColor;
+
             }
             else if((pointColor1== playerColorStr && pointColor2 == computerColorStr) || (pointColor1 == computerColorStr && pointColor2 == playerColorStr))
             {
                 combinedPointColor = mixedColorStr;
-                
+                GetComponent<SpriteRenderer>().sprite = mixedColorSprite;
+                GetComponent<SpriteRenderer>().color = Color.white;
             }
         }
        

@@ -114,3 +114,4 @@ MonoBehaviour:
   pointColor1: 
   pointColor2: 
   combinedPointColor: 
+  mixedColorSprite: {fileID: 21300000, guid: 4040de9575b2fc647946228a2861e168, type: 3}

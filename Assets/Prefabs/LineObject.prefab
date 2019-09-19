@@ -51,6 +51,7 @@ LineRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: af44826c04497d646af67aba57a5e966, type: 2}
+  - {fileID: 2100000, guid: af44826c04497d646af67aba57a5e966, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -76,12 +77,12 @@ LineRenderer:
   - {x: 1, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.1
+    widthMultiplier: 0.28
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
+        time: 0.006801605
         value: 1
         inSlope: 0
         outSlope: 0
