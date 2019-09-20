@@ -13,6 +13,7 @@ public class LineGenerator : MonoBehaviour
     private List<Vector3> linePositions = new List<Vector3>();
 
     private GameController gameController;
+    private PlusMinusImageScript plusMinusImageScript;
 
     int totalLineCount = 0;
 
@@ -72,6 +73,9 @@ public class LineGenerator : MonoBehaviour
                 currentLineRenderer.startColor = color1;
                 currentLineRenderer.endColor = color2;
             }
+
+            plusMinusImageScript = FindObjectOfType(typeof(PlusMinusImageScript)) as PlusMinusImageScript;
+            plusMinusImageScript.CreatePlusMinusForLine(currentLine);
         }
     }
 
@@ -128,6 +132,7 @@ public class LineGenerator : MonoBehaviour
 
         gameController = FindObjectOfType(typeof(GameController)) as GameController;
         StartCoroutine(gameController.CheckForEndgame());
+       
     }
 
     private Color SetColorOfPoint(GameObject point)

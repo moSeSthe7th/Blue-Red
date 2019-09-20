@@ -9,7 +9,7 @@ public class AnimatedLineDrawer : MonoBehaviour
     private float counter;
 
     private Vector3 origin, destination;
-    public float lineDrawSpeed = 6f;
+    public float lineDrawSpeed = 4f;
 
 
     void Start()
